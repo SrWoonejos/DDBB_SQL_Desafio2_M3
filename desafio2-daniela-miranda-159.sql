@@ -56,14 +56,15 @@ SELECT *
 FROM inscritos
 WHERE fecha =(
     SELECT MIN(fecha)
-	FROM inscritos
-);
+	FROM inscritos	
+)
+ORDER BY cantidad DESC;
 
 -->4. ¿Cuántos inscritos hay por día?
 SELECT 
 COUNT(*) AS inscritos_por_dia
 FROM inscritos
-GROUP BY fecha
+GROUP BY fecha;
 
 -->5. ¿Qué día se inscribieron la mayor cantidad de personas y cuántas personas se inscribieron en ese día?
 SELECT fecha, SUM(cantidad) AS total_inscritos
